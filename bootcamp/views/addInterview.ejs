@@ -1,0 +1,100 @@
+
+  <title>Interview Form</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .interview-form {
+      width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="time"],
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    select {
+      margin-bottom: 15px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #0b0c0c;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #032c36;
+    }
+
+    @media (max-width: 500px) {
+      .interview-form {
+        width: 80%;
+      }
+    }
+  </style>
+
+  <% if (locals.user) { %>
+    <form action="/interview/create" method="POST" class="interview-form">
+      <h2>Schedule Interview</h2>
+     
+      <div>
+        <label for="date">Date:</label>
+        <input type="date" name="date" placeholder="Enter Date" required>
+      </div>
+      <div>
+        <label for="starttime">Start Time:</label>
+        <input type="time" name="starttime" placeholder="Enter Time" required>
+      </div>
+      <div>
+        <label for="students">Select Student:</label>
+        <select name="students" required>
+          <% interview.forEach(Interviews => { %>
+            <option value="<%= Interviews._id %>"><%= Interviews.name %></option>
+          <% }) %>
+        </select>
+      </div>
+      <div>
+        <label for="companies">Select Company:</label>
+        <select name="companies" required>
+          <% company.forEach(Companies => { %>
+            <option value="<%= Companies._id %>"><%= Companies.name %></option>
+          <% }) %>
+        </select>
+      </div>
+      <div>
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+  <% } %>
+

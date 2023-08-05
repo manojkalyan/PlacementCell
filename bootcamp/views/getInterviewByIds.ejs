@@ -1,0 +1,90 @@
+<style>
+  body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+.interview-form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #dddddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+h2 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+select {
+  width: 100%;
+  margin: 5px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  display: block;
+  
+  width: 50%;
+  margin:auto;
+  padding: 10px;
+  background-color: #032c36;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0a4c5c;
+}
+
+</style>
+
+
+<% if (locals.user) { %>
+  <div class="interview-form">
+    <form action="/interview/updateInterview/<%= interviewinfo._id %>" method="POST">
+      <h2>Update Student Interview</h2>
+      <ul>
+        
+        <li><strong>Student Name:</strong><%= interviewinfo.students.name %></li>
+        <li><strong>Company Name:</strong><%= interviewinfo.companies.name %></li>
+        <li><strong>Date:</strong> <%= interviewinfo.date %></li>
+        <li><strong>Result</strong>:</strong> <%= interviewinfo.result %></li>
+
+
+      </ul>
+
+      <label for="result">Select Result:</label>
+      <select name="result" required>
+        <option value="pass">Pass</option>
+        <option value="fail">Fail</option>
+        <option value="Didn’t Attempt">Didn’t Attempt</option>
+        <option value="on-hold">On Hold</option>
+      </select>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+<% } %>

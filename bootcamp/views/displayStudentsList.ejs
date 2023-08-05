@@ -1,0 +1,159 @@
+
+  <title>All Student Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    table {
+      border-collapse: collapse;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #dddddd;
+      border-radius: 8px;
+      background-color: #fff;
+
+
+      
+
+
+    }
+h1{
+  text-align: center;
+}
+
+
+    thead {
+      color: #0c0a0a;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+      background-color: #fff;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    a {
+      text-decoration: none;
+      color: #3495f7;
+    }
+
+     table a:hover {
+      text-decoration: none;
+      background-color: rgb(24, 57, 70);
+      color: #f2f2f2;
+      padding: 3px;
+      border-radius: 3px;
+    }
+  .add-student-button {
+    width:125px;
+    height:20px;
+      display: block;
+      margin: 10px auto;
+      margin-left:800px;
+      padding: 10px 20px;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      background-color: rgb(23, 26, 26);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .add-student-button:hover {
+      background-color: rgb(24, 57, 70);
+    }
+
+    /* Media Queries */
+    @media screen and (max-width: 768px) {
+      th, td {
+        font-size: 14px;
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      th, td {
+        font-size: 12px;
+        padding: 5px;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+
+      th, td {
+        width: 200px;
+        white-space: nowrap;
+      }
+    }
+      @media screen and (max-width: 768px) {
+      /* Adjust button size and margin for smaller screens */
+      .add-student-button {
+        width: 130px;
+        height: 18px;
+        margin: 10px auto;
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      /* Further adjust button size and margin for even smaller screens */
+      .add-student-button {
+        width: 150px;
+        height: 16px;
+        margin: 5px auto;
+      }
+    }
+  </style>
+
+  <% if (locals.user) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>College</th>
+          <th>Batch</th>
+          <th>Status</th>
+          <th>DSA Final Score</th>
+          <th>Web D Final Score</th>
+          <th>React Final Score</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <h1>List Of Students</h1>
+    <a class="add-student-button" href="/students/renderStudentForm">Add New Student</a>
+        <% for (students of student) { %>
+          <tr>
+            <td><%= students.name %></td>
+            <td><%= students.email %></td>
+            <td><%= students.college %></td>
+            <td><%= students.batch %></td>
+            <td><%= students.status %></td>
+            <td><%= students.dsaFinalScore %></td>
+            <td><%= students.webDFinalScore %></td>
+            <td><%= students.reactFinalScore %></td>
+            <td><a href="/students/getStudentByIds/<%= students._id %>">update</a></td>
+            <td><a href="/students/destroy/<%= students._id %>">delete</a></td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  <% } %>

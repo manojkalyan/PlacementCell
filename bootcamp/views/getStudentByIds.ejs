@@ -1,0 +1,126 @@
+<style>
+    body {
+      font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+
+    }
+  
+  form {
+    max-width: 400px;
+   
+
+
+
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+  }
+
+  h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+  }
+
+  input[type="submit"] {
+    background-color: #111111;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* Media Queries */
+  @media screen and (max-width: 768px) {
+    form {
+      padding: 15px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+      padding: 8px;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    form {
+      padding: 10px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"] {
+      padding: 6px;
+    }
+
+    input[type="submit"] {
+      padding: 8px 15px;
+    }
+  }
+   label[for="status"] {
+    margin-bottom: 0; /* Remove margin-bottom for the select label */
+  }
+  
+
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+  }
+
+</style>
+
+<% if (locals.user) { %>
+  <form action="/students/updateStudent/<%= students._id %>" method="POST">
+    <h2>Update Profile</h2>
+
+    <label for="name">Name</label>
+    <input type="text" name="name" value="<%= students.name %>" placeholder="Enter name" required>
+
+    <label for="email">Email</label>
+    <input type="email" name="email" value="<%= students.email %>" placeholder="Enter email" required>
+
+    <label for="college">College</label>
+    <input type="text" name="college" value="<%= students.college %>" placeholder="Enter college" required>
+
+    <label for="batch">Batch</label>
+    <input type="text" name="batch" value="<%= students.batch %>" placeholder="Enter batch" required>
+    
+    
+     <label for="status">Status</label>
+    <select name="status" required>
+      <option value="placed">Placed</option>
+      <option value="not_placed">Not Placed</option>
+    </select>
+
+    <label for="dsaFinalScore">DSA Final Score</label>
+    <input type="number" name="dsaFinalScore" value="<%= students.dsaFinalScore %>" placeholder="Enter DSA Final Score" required>
+
+    <label for="webDFinalScore">Web D Final Score</label>
+    <input type="number" name="webDFinalScore" value="<%= students.webDFinalScore %>" placeholder="Enter Web D Final Score" required>
+
+    <label for="reactFinalScore">React Final Score</label>
+    <input type="number" name="reactFinalScore" value="<%= students.reactFinalScore %>" placeholder="Enter React Final Score" required>
+
+    <input type="submit" value="Submit">
+  </form>
+<% } %>

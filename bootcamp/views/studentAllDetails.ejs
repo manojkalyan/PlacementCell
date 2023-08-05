@@ -1,0 +1,118 @@
+
+  <title>All Student Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f2f2f2;
+    }
+
+table{
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #dddddd;
+      border-radius: 8px;
+      background-color: #fff;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background-color: #ffffff;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #032c36;
+      color: #fff;
+    }
+
+    .no-interviews {
+      color: #888;
+    }
+
+    .company-info {
+      font-size: 14px;
+      color: #444;
+    }
+
+    @media only screen and (max-width: 600px) {
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+
+      th, td {
+        width: 200px;
+        white-space: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>All Student Details</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>College</th>
+        <th>Batch</th>
+        <th>Status</th>
+        <th>DSA Final Score</th>
+        <th>WebD Final Score</th>
+        <th>React Final Score</th>
+        <th>Company</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% students.forEach(student => { %>
+        <% if (student.interviews.length > 0) { %>
+          <% let prevCompanyId = null; %>
+          <% student.interviews.forEach(interview => { %>
+            <% if (interview.companies && interview.companies._id !== prevCompanyId) { %>
+              <tr>
+                <td><%= student.name %></td>
+                <td><%= student.email %></td>
+                <td><%= student.college %></td>
+                <td><%= student.batch %></td>
+                <td><%= student.status %></td>
+                <td><%= student.dsaFinalScore %></td>
+                <td><%= student.webDFinalScore %></td>
+                <td><%= student.reactFinalScore %></td>
+                <td><%= interview.companies.name %></td>
+                <td><%= interview.result %></td>
+              </tr>
+              <% prevCompanyId = interview.companies._id; %>
+            <% } %>
+          <% }) %>
+        <% } else { %>
+          <tr>
+            <td><%= student.name %></td>
+            <td><%= student.email %></td>
+            <td><%= student.college %></td>
+            <td><%= student.batch %></td>
+            <td><%= student.status %></td>
+            <td><%= student.dsaFinalScore %></td>
+            <td><%= student.webDFinalScore %></td>
+            <td><%= student.reactFinalScore %></td>
+            <td class="company-info">No Company Found</td>
+            <td class="no-interviews">Result Pending</td>
+          </tr>
+        <% } %>
+      <% }) %>
+    </tbody>
+  </table>

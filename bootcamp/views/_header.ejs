@@ -1,0 +1,166 @@
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 15px;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            position: relative; /* Required for dropdown positioning */
+            padding: 0 10px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .dropdown-menu {
+            display: none; /* Hide dropdown menu by default */
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #e0dada;
+            padding: 10px;
+        }
+
+        .nav-links li:hover .dropdown-menu {
+            display: block; /* Show dropdown menu on hover */
+        }
+
+        .dropdown-menu li {
+            padding: 5px 0;
+        }
+
+        .dropdown-menu a {
+            color: #fff;
+            text-decoration: none;
+        }
+        /* Media query for mobile screens */
+        @media (max-width: 650px) {
+            .nav-links {
+                flex-direction: column;
+            }
+
+            .nav-links li {
+                padding: 8px 10px;
+            }
+
+            .nav-links .dropdown-menu {
+                position: static;
+                display: none;
+                background-color: rgb(204, 194, 194);
+            }
+
+            .nav-links li:hover .dropdown-menu {
+                display: block;
+            }
+
+            .nav-links li:hover ul.dropdown-menu {
+                position: relative;
+                top: 0;
+                left: 5%;
+               
+
+            }
+        }
+    </style>
+
+   
+    
+    <nav>
+        <div class="navbar-container">
+            <div class="logo">Coding Ninjas</div>
+            <% if(locals.user){ %>
+                <ul class="nav-links">
+                    <li>
+                        <a href="/employees/home">Home</a>
+                        
+                       
+                    </li>
+                    <li>
+                        <a href="#">Students</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/students/renderStudentForm">AddStudents</a></li>
+                            <li><a href="/students/DisplayListOfStudents">ListOfStudents</a></li>
+                            <li><a href="/students/alldetails">AllDetails</a></li>
+                        </ul>
+                    </li>
+                      <li>
+                        <a href="#">Interviews</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/interview/renderInterviewsPage">AddInterview</a></li>
+                            <li><a href="/interview/listOfInterview">ListOfInterview</a></li>
+                            <!-- Add more sublinks if needed -->
+                        </ul>
+
+                    </li>
+                    <li>
+                        <a href="#">Companies</a>
+                        <ul class="dropdown-menu">
+                           <li><a href="/company/renderComanyPage">AddCompany</a></li>
+
+                            <li><a href="/company/listOfCompany">listOfCompany</a></li>
+                            <!-- Add more sublinks if needed -->
+                        </ul>
+
+                    </li>
+                       <li>
+                        <a href="#">External Jobs List</a>
+                        <ul class="dropdown-menu">
+                           <li><a href="/students/apisjob">External Jobs List</a></li>
+
+                        </ul>
+
+                    </li>
+                     <li>
+                        <a href="/students/export">Download</a>
+                        
+                       
+                    </li>
+                    <li>
+                    <a href="/employees/signout">signout</a>
+                    </li>
+                   
+                   <li><a href="/employees/profile/<%= user.id %>"><%= user.name %></a></li>
+               
+
+                </ul>
+            <%}else {%>
+                <ul class="nav-links">
+                    <li><a href="/">Signup</a></li>
+                    <li><a href="/employees/signin">Login</a></li>
+                    
+                </ul>
+            <%}%>
+        </div>
+    </nav>
+    <!-- Rest of your website content goes here -->
+
