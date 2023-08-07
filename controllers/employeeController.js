@@ -19,6 +19,7 @@ module.exports.signup = function (req, res) {
   if (req.isAuthenticated()) {
     return res.redirect('/employees/home');
   }
+  console.log(__dirname);
   return res.render("employeeSignup");
 };
 

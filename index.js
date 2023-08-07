@@ -17,6 +17,7 @@ const path = require('path');
 
 // Import and connect to MongoDB using Mongoose
 const mongodb = require('./config/mongoose');
+  console.log(__dirname);
 
 // Set up Express middleware
 app.use(express.urlencoded()); // Parse incoming request bodies
