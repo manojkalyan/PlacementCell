@@ -1,8 +1,8 @@
-Placement Cell Web Application
+# Placement Cell Web Application
 
 This is a web application for managing placement-related activities for a college or institution. It follows the MVC (Model-View-Controller) architecture, allowing administrators, employees, and students to manage company information, student profiles, interviews, and job listings.
 
-Features
+# Features
 User authentication and authorization using Passport.js
 Add, update, and delete company information
 Add, update, and delete student profiles
@@ -12,7 +12,7 @@ Fetch real-time job listings using external APIs
 Responsive and minimalistic design
 
 
-Technologies Used
+# Technologies Used
 Node.js
 Express.js
 MongoDB with Mongoose
@@ -24,7 +24,7 @@ HTML, CSS, and JavaScript for frontend
 
 
 
-Usage
+# Usage
 Register as an employee to access the placement cell features.
 Add company information by navigating to /company/renderComanyPage.
 Add student profiles by navigating to /students/renderStudentForm.
@@ -33,7 +33,7 @@ View lists of companies, students, interviews, etc., through the respective rout
 Sign out by navigating to /employees/signout
 
 
-Folder Structure
+# Folder Structure
 -assets/
 -config/
 - models/
@@ -67,7 +67,7 @@ Folder Structure
 - app.js (main application file)
 
 
-Dependencies
+# Dependencies
 
 Express.js: Web application framework for Node.js.
 Mongoose: MongoDB object modeling for Node.js.
@@ -93,7 +93,9 @@ EJS: Embedded JavaScript templates for views.
 
 ![Screenshot (38)](https://github.com/manojkalyan/PlacementCell/assets/70328306/7dde49a9-86ef-41cf-9937-0c021d5687a6)
 #list of interview page
-![Screenshot (37)](https://github.com/manojkalyan/PlacementCell/assets/70328306/ad3fb88f-5949-411c-9c78-15abf69d23b0)
+![Screenshot (45)](https://github.com/manojkalyan/PlacementCell/assets/70328306/303174b1-91f0-42fc-a9b3-6ec3eceb313b)
+
+
 # update interview page
 ![Screenshot (41)](https://github.com/manojkalyan/PlacementCell/assets/70328306/09f3af05-e06b-404a-985d-493b3a9cf831)
 # add company page
@@ -106,6 +108,24 @@ EJS: Embedded JavaScript templates for views.
 
 
 ![Screenshot (44)](https://github.com/manojkalyan/PlacementCell/assets/70328306/d1b09e49-de1c-4da7-9c7d-864c4eb1c6c2)
+# all details of students
+
+![Screenshot (46)](https://github.com/manojkalyan/PlacementCell/assets/70328306/fdfc7cc1-cb98-421d-bcf9-7baadcf38ef6)
+# all details of student in Excel format
+![Screenshot (50)](https://github.com/manojkalyan/PlacementCell/assets/70328306/ca742cc3-26fc-49a2-a1e0-2011bdf355e3)
+
+![Screenshot (48)](https://github.com/manojkalyan/PlacementCell/assets/70328306/345162d2-4838-44e2-8faa-dfe44e8f4fa9)
+
+
+# external jobs page
+
+
+
+
+
+
+![Screenshot (49)](https://github.com/manojkalyan/PlacementCell/assets/70328306/219b2a04-30dc-4ea7-95c9-6e27cbfeb477)
+
 
 
 
