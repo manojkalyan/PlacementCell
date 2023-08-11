@@ -73,6 +73,39 @@ Express.js: Web application framework for Node.js.
 Mongoose: MongoDB object modeling for Node.js.
 EJS: Embedded JavaScript templates for views.
 
+# Application Images
+
+# signup page
+![Screenshot (31)](https://github.com/manojkalyan/PlacementCell/assets/70328306/920beb15-4f3d-4f48-9f3b-db1726751c49)
+# login page
+![Screenshot (32)](https://github.com/manojkalyan/PlacementCell/assets/70328306/2b7e45ad-ab25-4022-8557-bd5ec365a8bf)
+# if password missmatch shows popup message
+![Screenshot (33)](https://github.com/manojkalyan/PlacementCell/assets/70328306/80a2c387-2012-431c-9fb2-6b31fa90ac97)
+
+# home page
+![Screenshot (35)](https://github.com/manojkalyan/PlacementCell/assets/70328306/eac7f6d1-90fb-4f77-b25e-cc892637d499)
+# Add student Page
+![Screenshot (36)](https://github.com/manojkalyan/PlacementCell/assets/70328306/7f4f082c-7b48-42cb-aab0-6b9cbac56088)
+# list of students page
+
+![Screenshot (37)](https://github.com/manojkalyan/PlacementCell/assets/70328306/69ae3466-58a0-42e4-9055-72e271d747ea)
+# add Interview page
+
+![Screenshot (38)](https://github.com/manojkalyan/PlacementCell/assets/70328306/7dde49a9-86ef-41cf-9937-0c021d5687a6)
+#list of interview page
+![Screenshot (37)](https://github.com/manojkalyan/PlacementCell/assets/70328306/ad3fb88f-5949-411c-9c78-15abf69d23b0)
+# update interview page
+![Screenshot (41)](https://github.com/manojkalyan/PlacementCell/assets/70328306/09f3af05-e06b-404a-985d-493b3a9cf831)
+# add company page
+![Screenshot (42)](https://github.com/manojkalyan/PlacementCell/assets/70328306/bc19d0d2-7aba-48be-af58-356da2ea12c5)
+
+# list of company
+
+![Screenshot (43)](https://github.com/manojkalyan/PlacementCell/assets/70328306/71601335-4d06-4c48-8b17-742d8a975ece)
+# employee update page
+
+
+![Screenshot (44)](https://github.com/manojkalyan/PlacementCell/assets/70328306/d1b09e49-de1c-4da7-9c7d-864c4eb1c6c2)
 
 
 
