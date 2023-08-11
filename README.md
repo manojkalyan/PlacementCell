@@ -92,7 +92,7 @@ EJS: Embedded JavaScript templates for views.
 # add Interview page
 
 ![Screenshot (38)](https://github.com/manojkalyan/PlacementCell/assets/70328306/7dde49a9-86ef-41cf-9937-0c021d5687a6)
-#list of interview page
+# list of interview page
 ![Screenshot (45)](https://github.com/manojkalyan/PlacementCell/assets/70328306/303174b1-91f0-42fc-a9b3-6ec3eceb313b)
 
 
